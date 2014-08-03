@@ -1,5 +1,7 @@
 # json-duplex-stream
 
+[![Build Status](https://travis-ci.org/pgte/json-duplex-stream.svg?branch=master)](https://travis-ci.org/pgte/json-duplex-stream)
+
 Newline-separated JSON duplex stream
 
 ## Install
