@@ -39,6 +39,8 @@ function JSONDuplexStream() {
   return self;
 
   function onError(err) {
-    self.emit('error', err);
+    if (self.listeners('error').length > 0) {
+      self.emit('error', err);
+    }
   }
 }
