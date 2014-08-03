@@ -1,0 +1,28 @@
+{
+  "name": "json-duplex-stream",
+  "version": "1.0.0",
+  "description": "NL-separated JSON duplex stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pgte/json-duplex-stream.git"
+  },
+  "author": "Pedro Teixeira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pgte/json-duplex-stream/issues"
+  },
+  "homepage": "https://github.com/pgte/json-duplex-stream",
+  "dependencies": {
+    "json-stringify-safe": "^5.0.0",
+    "split": "^0.3.0",
+    "stream-combiner": "^0.2.1",
+    "through": "^2.3.4"
+  },
+  "devDependencies": {
+    "tape": "^2.13.4"
+  }
+}
