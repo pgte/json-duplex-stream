@@ -59,7 +59,7 @@ test('multi', function(assert) {
 });
 
 test('parse error', function(assert) {
-  assert.plan(2);
+  assert.plan(1);
 
   var net = through();
 
@@ -69,10 +69,6 @@ test('parse error', function(assert) {
 
   var s = JSONDuplexStream();
   net.pipe(s.in).pipe(app).pipe(s.out).pipe(net);
-
-  s.on('error', function(err) {
-    assert.equal(err.message, 'Unexpected token f');
-  });
 
   s.in.on('error', function(err) {
     assert.equal(err.message, 'Unexpected token f');

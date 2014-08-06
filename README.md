@@ -31,6 +31,18 @@ var stream = JSONDuplexStream();
 in.pipe(stream.in).pipe(app).pipe(stream.out).pipe(out);
 ```
 
+## Handle protocol errors
+
+```javascript
+stream.in.on('error', function(err) {
+  // ...
+});
+
+stream.out.on('error', function(err) {
+  // ...
+});
+```
+
 ## License
 
 MIT

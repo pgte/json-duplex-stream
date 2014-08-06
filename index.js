@@ -23,7 +23,6 @@ function JSONDuplexStream() {
   });
 
   var input = combine(split(), parse);
-  input.on('error', onError);
   self.in = input;
 
 
@@ -33,14 +32,7 @@ function JSONDuplexStream() {
     this.queue(stringify(chunk) + '\n');
   });
 
-  serialize.on('error', onError);
   self.out = serialize;
 
   return self;
-
-  function onError(err) {
-    if (self.listeners('error').length > 0) {
-      self.emit('error', err);
-    }
-  }
 }
