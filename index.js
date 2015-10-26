@@ -14,11 +14,14 @@ function JSONDuplexStream() {
   // input
 
   var parse = through(function(chunk) {
-    try {
-      this.queue(JSON.parse(chunk));
-    }
-    catch (err) {
-      this.emit('error', err);
+    chunk = chunk.toString().trim();
+    if (chunk.length) {
+      try {
+        this.queue(JSON.parse(chunk));
+      }
+      catch (err) {
+        this.emit('error', err);
+      }
     }
   });
 
